@@ -101,6 +101,10 @@ const Header = () => {
                        KoiKonRegarde
                     </li>
                     <li className="menuItem">
+                       
+                       Ma Watchlist
+                    </li>
+                    <li className="menuItem">
                         <HiOutlineSearch onClick={openSearch} />
                     </li>
                 </ul>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
@@ -14,6 +14,7 @@ import PosterFallback from "../../../assets/no-poster.png";
 import { PlayIcon } from "../PlayBtn.jsx";
 import {StreamIcon} from "../StreamBtn.jsx"
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
+
 
 const DetailsBanner = ({ video, crew }) => {
     const [show, setShow] = useState(false);
@@ -111,6 +112,11 @@ const DetailsBanner = ({ video, crew }) => {
                                             </div>
                                             </a> 
                                           } 
+                                            <div className="watchlistCtrl" 
+                                            >
+                                                    Ajouter à la Watchlist
+                                            </div>
+
                                         </div>
                                         <div className="overview">
                                             <div className="heading">
