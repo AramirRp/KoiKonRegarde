@@ -42,10 +42,7 @@ const HeroBanner = () => {
             fetchRandomMovie().then((result) => {
                 console.log(result);
                 navigate(`/movie/${result}`);
-            }));
-          
-
-            
+            }));            
     };
 
     return (

@@ -25,7 +25,7 @@ const DetailsBanner = ({ video, crew }) => {
     const { url } = useSelector((state) => state.home);
 
     const _genres = data?.genres?.map((g) => g.id);
-
+    const year = dayjs(data?.release_date).format("YYYY");
     const director = crew?.filter((f) => f.job === "Director");
     const writer = crew?.filter(
         (f) => f.job === "Screenplay" || f.job === "Story" || f.job === "Writer"
@@ -99,10 +99,10 @@ const DetailsBanner = ({ video, crew }) => {
                                                     Voir la Bande-annonce
                                                 </span>
                                             </div>
+                                        {year<2024 &&
                                             <a href={LinkUrl} target="_blank">
                                                 <div
-                                                className="streambtn"
-                                                
+                                                className="streambtn"    
                                                 >
                                                 <StreamIcon />
                                                 <span className="text">
@@ -110,9 +110,8 @@ const DetailsBanner = ({ video, crew }) => {
                                                 </span>
                                             </div>
                                             </a> 
-                                           
+                                          } 
                                         </div>
-
                                         <div className="overview">
                                             <div className="heading">
                                                 Résumé
@@ -185,27 +184,6 @@ const DetailsBanner = ({ video, crew }) => {
                                             </div>
                                         )}
 
-                                        {data?.created_by?.length > 0 && (
-                                            <div className="info">
-                                                <span className="text bold">
-                                                    Creator:{" "}
-                                                </span>
-                                                <span className="text">
-                                                    {data?.created_by?.map(
-                                                        (d, i) => (
-                                                            <span key={i}>
-                                                                {d.name}
-                                                                {data
-                                                                    ?.created_by
-                                                                    .length -
-                                                                    1 !==
-                                                                    i && ", "}
-                                                            </span>
-                                                        )
-                                                    )}
-                                                </span>
-                                            </div>
-                                        )}
                                     </div>
                                 </div>
                                 <VideoPopup

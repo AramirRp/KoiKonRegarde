@@ -5,7 +5,7 @@ import "./style.scss";
 
 const PageNotFound = () => {
     return (
-        <div>PageNotFound</div>
+        <div>Erreur 404, déso !</div>
 
     )
 

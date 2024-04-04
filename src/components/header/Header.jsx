@@ -9,15 +9,19 @@ import "./style.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/movix-logo.svg";
 
+import {fetchRandomMovie} from '../../utils/apiRandom';
+
+
 const Header = () => {
     const [show, setShow] = useState("top");
     const [lastScrollY, setLastScrollY] = useState(0);
     const [mobileMenu, setMobileMenu] = useState(false);
     const [query, setQuery] = useState("");
     const [showSearch, setShowSearch] = useState("");
+    const RandomMovieId = useState(" ");
+
     const navigate = useNavigate();
     const location = useLocation();
-
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -33,8 +37,7 @@ const Header = () => {
         }else {
             setShow("top");
         }
-        setLastScrollY(window.scrollY);
-        
+        setLastScrollY(window.scrollY);       
     };
 
     useEffect(() => {
@@ -52,6 +55,14 @@ const Header = () => {
                 setShowSearch(false);
             }, 1000);
         }
+    };
+
+    const RandomQueryHandler = () => {
+        RandomMovieId(
+            fetchRandomMovie().then((result) => {
+                console.log(result);
+                navigate(`/movie/${result}`);
+            }));            
     };
 
     const openSearch = () => {
@@ -84,7 +95,9 @@ const Header = () => {
                     >
                         Movies
                     </li>
-                    <li className="menuItem">
+                    <li className="menuItem"
+                        onClick={RandomQueryHandler}
+                        >
                        KoiKonRegarde
                     </li>
                     <li className="menuItem">
