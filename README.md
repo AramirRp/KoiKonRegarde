@@ -1,8 +1,17 @@
-# React + Vite
+**KoiKonRegarde - React version
+**
+First project using React. Student project for educational purpose. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The idea was to take the previous project KoiKonRegarde made as a collective project at Ada Tech school and put it in another level, using React to create a more actual interface, with search engine, randomizer, and current releases. 
 
-Currently, two official plugins are available:
+WIP updates : 
+- fully french translation of the website
+- searching and adding JustWatch API and french theaters API to show where to see the movies
+- adding randomizer with genre filter after a first choice
+- rework of the SCSS and the global flow of the website
+- creating a KoiKonRegarde logo
+  ...and lot of other stuff ! 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The website is using TMDB API, React, redux, Sass.
+
+The project is based on the tutorial made by JS Dev Hindi : https://youtu.be/VLgVw2NEqCM?si=pspDmj9RLv84xf8P
