@@ -103,7 +103,7 @@ const Explore = () => {
                     <div className="pageTitle">
                         {mediaType === "tv"
                             ? "Explore TV Shows"
-                            : "Explore Movies"}
+                            : "Découvertes"}
                     </div>
                     <div className="filters">
                         <Select

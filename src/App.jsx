@@ -12,6 +12,9 @@ import Details from "./pages/details/Details";
 import SearchResult from "./pages/searchResult/SearchResult";
 import Explore from "./pages/explore/Explore";
 import PageNotFound from "./pages/404/PageNotFound";
+import Watchlist from "./pages/watchlist/Watchlist"
+
+import { GlobalProvider } from "./context/GlobalState";
 
 function App() {
     const dispatch = useDispatch();
@@ -55,6 +58,7 @@ function App() {
     };
 
     return (
+        <GlobalProvider>
         <BrowserRouter>
             <Header />
             <Routes>
@@ -62,10 +66,12 @@ function App() {
                 <Route path="/:mediaType/:id" element={<Details />} />
                 <Route path="/search/:query" element={<SearchResult />} />
                 <Route path="/explore/:mediaType" element={<Explore />} />
+                <Route path="/watchlist" element={<Watchlist />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
             <Footer />
         </BrowserRouter>
+        </GlobalProvider>
     );
 }
 

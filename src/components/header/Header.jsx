@@ -79,6 +79,9 @@ const Header = () => {
         if (type === "movie") {
             navigate("/explore/movie");
         } 
+        if (type === "watchlist") {
+            navigate("watchlist");
+        } 
         setMobileMenu(false);
     };
 
@@ -100,7 +103,8 @@ const Header = () => {
                         >
                        KoiKonRegarde
                     </li>
-                    <li className="menuItem">
+                    <li className="menuItem"
+                    onClick={() => navigationHandler("watchlist")}>
                        
                        Ma Watchlist
                     </li>

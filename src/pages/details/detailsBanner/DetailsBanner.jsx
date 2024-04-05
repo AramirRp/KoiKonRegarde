@@ -15,6 +15,7 @@ import { PlayIcon } from "../PlayBtn.jsx";
 import {StreamIcon} from "../StreamBtn.jsx"
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 
+import { GlobalContext } from "../../../context/GlobalState";
 
 const DetailsBanner = ({ video, crew }) => {
     const [show, setShow] = useState(false);
@@ -39,6 +40,11 @@ const DetailsBanner = ({ video, crew }) => {
     };
 
     const LinkUrl = `https://movie-web-me.vercel.app/media/tmdb-movie-${id}`
+
+    const { addMovieToWatchlist, watchlist,} = useContext(GlobalContext);
+    let StoredMovie = watchlist.find(o => o.id == id);
+
+    const watchlistDisabled = StoredMovie ? true : false;
 
     return (
         <div className="detailsBanner">
@@ -112,10 +118,13 @@ const DetailsBanner = ({ video, crew }) => {
                                             </div>
                                             </a> 
                                           } 
-                                            <div className="watchlistCtrl" 
+                                            <button
+                                            className="watchlistcontrol"
+                                            disabled={watchlistDisabled}
+                                            onClick={() => addMovieToWatchlist(data)}
                                             >
-                                                    Ajouter à la Watchlist
-                                            </div>
+                                            Add to Watchlist
+                                        </button>
 
                                         </div>
                                         <div className="overview">

@@ -10,6 +10,7 @@ import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 import {fetchRandomMovie} from '../../../utils/apiRandom';
 
+
 const HeroBanner = () => {
     const [background, setBackground] = useState("");
     const [query, setQuery] = useState("");
