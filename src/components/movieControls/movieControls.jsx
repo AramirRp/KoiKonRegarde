@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../../context/GlobalState";
 
+export const MovieControls = ( data ) => {
+  const {
+    removeMovieFromWatchlist,
+  } = useContext(GlobalContext);
 
-export MovieControls = ({data, type}) => {
+  return (
+    <div className="inner-card-controls">
+      {"watchlist" && (
+        <>
+          <button
+            className="ctrl-btn"
+            onClick={() => removeMovieFromWatchlist(data.id)}
+          >
+            <i className="fa-fw fa fa-times"></i>
+          </button>
+        </>
+      )}
 
-
-
-    return (
-        <div className="inner-card-controls">
-            {type === 'watchlist' &&(
-                <>
-                    <button className="ctrl-btn">
-                        <i className="fa-fw far fa-eye"></i>
-                    </button>
-                    <button className="ctrl-btn">
-                    <i className="fa-fw far fa-times"></i>
-                </button>
-                </>
-            )}
-        
-        </div>
-    )
-}
-
-export default MovieControls
+      
+    </div>
+  );
+};
