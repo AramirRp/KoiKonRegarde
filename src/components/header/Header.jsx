@@ -96,7 +96,7 @@ const Header = () => {
                         className="menuItem"
                         onClick={() => navigationHandler("movie")}
                     >
-                        Movies
+                        Films
                     </li>
                     <li className="menuItem"
                         onClick={RandomQueryHandler}
@@ -128,7 +128,7 @@ const Header = () => {
                         <div className="searchInput">
                             <input
                                 type="text"
-                                placeholder="Search for a movie or tv show...."
+                                placeholder="Recherchez votre prochain film !"
                                 onChange={(e) => setQuery(e.target.value)}
                                 onKeyUp={searchQueryHandler}
                             />

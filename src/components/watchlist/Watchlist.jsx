@@ -5,7 +5,7 @@ import {GlobalContext} from "../../context/GlobalState";
 import { useParams } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
-import PosterFallback from "../../../assets/no-poster.png";
+import PosterFallback from "../../assets/no-poster.png";
 
 
 
@@ -33,7 +33,7 @@ const Watchlist = () => {
                         ))}
                     </div>
                     ) : (
-                    <h2 className="no-movies">No movies in your list! Add some!</h2>
+                    <h2 className="no-movies">Pas de film dans votre liste, ajoutez en !</h2>
                     )}
                             
                 </div>

@@ -14,16 +14,16 @@ import Spinner from "../../components/spinner/Spinner";
 let filters = {};
 
 const sortbyData = [
-    { value: "popularity.desc", label: "Popularity Descending" },
-    { value: "popularity.asc", label: "Popularity Ascending" },
-    { value: "vote_average.desc", label: "Rating Descending" },
-    { value: "vote_average.asc", label: "Rating Ascending" },
+    { value: "popularity.desc", label: "Du + au - populaire" },
+    { value: "popularity.asc", label: "Du - au + populaire" },
+    { value: "vote_average.desc", label: "Du + au - noté" },
+    { value: "vote_average.asc", label: "Du - au + noté" },
     {
         value: "primary_release_date.desc",
-        label: "Release Date Descending",
+        label: "Dernières sorties",
     },
-    { value: "primary_release_date.asc", label: "Release Date Ascending" },
-    { value: "original_title.asc", label: "Title (A-Z)" },
+    { value: "primary_release_date.asc", label: "Du + vieux au + récent" },
+    { value: "original_title.asc", label: "Titre (A-Z)" },
 ];
 
 const Explore = () => {
@@ -34,11 +34,11 @@ const Explore = () => {
     const [sortby, setSortby] = useState(null);
     const { mediaType } = useParams();
 
-    const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
+    const { data: genresData } = useFetch(`/genre/${mediaType}/list?language=fr`);
 
     const fetchInitialData = () => {
         setLoading(true);
-        fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
+        fetchDataFromApi(`/discover/${mediaType}?language=fr`, filters).then((res) => {
             setData(res);
             setPageNum((prev) => prev + 1);
             setLoading(false);
@@ -72,7 +72,7 @@ const Explore = () => {
     }, [mediaType]);
 
     const onChange = (selectedItems, action) => {
-        if (action.name === "sortby") {
+        if (action.name === "Tri") {
             setSortby(selectedItems);
             if (action.action !== "clear") {
                 filters.sort_by = selectedItems.value;
@@ -115,7 +115,7 @@ const Explore = () => {
                             getOptionLabel={(option) => option.name}
                             getOptionValue={(option) => option.id}
                             onChange={onChange}
-                            placeholder="Select genres"
+                            placeholder="Genres"
                             className="react-select-container genresDD"
                             classNamePrefix="react-select"
                         />
@@ -125,7 +125,7 @@ const Explore = () => {
                             options={sortbyData}
                             onChange={onChange}
                             isClearable={true}
-                            placeholder="Sort by"
+                            placeholder="Tri par"
                             className="react-select-container sortbyDD"
                             classNamePrefix="react-select"
                         />

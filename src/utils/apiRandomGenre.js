@@ -10,12 +10,12 @@ const options = {
   }
 };
 
-export const fetchRandomMovie = async () => {
+export const fetchRandomMovie = async (genre) => {
    try {
 
-    const genres = [28, 12, 16, 35, 80, 99, 18, 10751, 14, 36, 27, 10402, 9648, 10749, 878, 10770, 53, 10752, 37 ]
-let genreId = Math.floor(Math.random()*genres.length);
-genreId = genres[genreId];
+//     const genres = [28, 12, 16, 35, 80, 99, 18, 10751, 14, 36, 27, 10402, 9648, 10749, 878, 10770, 53, 10752, 37 ]
+// let genreId = Math.floor(Math.random()*genres.length);
+// genreId = genres[genreId];
 
 let minResult = 1;
   let maxResult = 20;
@@ -26,7 +26,7 @@ let minResult = 1;
 // let response = await axios.get(BASE_URL + 'discover/movie?api_key=' + API_KEY + '&with_genres=' + genreId + '&sort_by=top-rated.desc&page='+ randomNumb);
 // console.log(response.data.url);
 let randomNumb2 = Math.floor(Math.random()*20);
-let response = await fetch(BASE_URL + 'discover/movie?api_key=' + API_KEY + '&with_genres=' + genreId + '&sort_by=top-rated.desc&page='+ randomNumb);
+let response = await fetch(BASE_URL + 'discover/movie?api_key=' + API_KEY + '&with_genres=' + genre + '&sort_by=top-rated.desc&page='+ randomNumb);
 let data = await response.json();
 let randomUrl = data.results[randomNumb2];
 let randomId = randomUrl.id;

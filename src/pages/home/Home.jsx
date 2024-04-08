@@ -8,6 +8,7 @@ import Popular from "./popular/Popular";
 import TopRated from "./topRated/TopRated"
 import KoiKonRegarde from "./koiKonRegarde/KoiKonRegarde";
 
+
 HeroBanner;
 
 const Home = () => {

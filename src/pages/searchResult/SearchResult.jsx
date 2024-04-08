@@ -18,7 +18,7 @@ const SearchResult = () => {
 
     const fetchInitialData = () => {
         setLoading(true);
-        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
+        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}?language=fr`).then(
             (res) => {
                 setData(res);
                 setPageNum((prev) => prev + 1);
@@ -28,7 +28,7 @@ const SearchResult = () => {
     };
 
     const fetchNextPageData = () => {
-        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}`).then(
+        fetchDataFromApi(`/search/multi?query=${query}&page=${pageNum}?language=fr`).then(
             (res) => {
                 if (data?.results) {
                     setData({
@@ -83,7 +83,7 @@ const SearchResult = () => {
                         </>
                     ) : (
                         <span className="resultNotFound">
-                            Sorry, Results not found!
+                            Désolé, aucun réusltat ! 
                         </span>
                     )}
                 </ContentWrapper>

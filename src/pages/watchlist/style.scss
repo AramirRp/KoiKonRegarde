@@ -1,4 +1,23 @@
 @import "../../mixins.scss";
+
+:root {
+  --primary: #032541;
+  --secondary: #21d07a;
+  --white: #fff;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
 .watchlistpage {
   min-height: 700px;
   padding-top: 100px;
@@ -41,13 +60,6 @@
 }
 
 
-:root {
-  --primary: #032541;
-  --secondary: #21d07a;
-  --white: #fff;
-}
-
-
 .count-pill {
   display: block;
   background-color: var(--secondary);
@@ -56,4 +68,81 @@
   font-weight: 600;
   border-radius: 999px;
   color: var(--primary);
+}
+
+.ctrl-btn {
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 1.25rem;
+  padding: 5px;
+  margin: 0;
+}
+
+.ctrl-btn:hover {
+  color: var(--secondary);
+  cursor: pointer;
+  
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.movie-card {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  display: block;
+  
+}
+
+.movie-card img {
+  width: 100%;
+  display: block;
+}
+
+.movie-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.movie-card:hover .overlay {
+  border: 3px solid var(--secondary);
+  border-radius: 5px;
+
+}
+
+.movie-card .inner-card-controls {
+  border-radius: 0.7em;
+  width: 97%;
+  height: 95%;
+  top:0;
+  left:0;
+  position: absolute;
+  padding: 0rem;
+  background: rgb(0 0 0 / 60%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 0.5s;
+  // box-shadow:  9px 1em 1em 1px rgb(6 6 6);
+}
+
+.movie-card:hover .inner-card-controls {
+  opacity: 1;
+
 }

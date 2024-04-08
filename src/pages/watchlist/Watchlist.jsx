@@ -35,15 +35,17 @@ const Watchlist = () => {
             {watchlist.length} {watchlist.length === 1 ? "Movie" : "Movies"}
           </span>
              </div>  
-                <div className="movie-grid">
+                <div>
                             {watchlist.length > 0 ? (
                     <div className="movie-grid">
                         {watchlist.map((data) => (
                             data.poster_path ? (
                                 <>
+                                <div className="movie-card">
                             <Img className="posterImg" key={data.id}  src={url.backdrop + data.poster_path }/>
                             
-                            <MovieControls  movie={data}/>
+                            <MovieControls className="ctrlbtn" movie={data}/>
+                            </div>
                             </>
                         ) : (
                             <>
