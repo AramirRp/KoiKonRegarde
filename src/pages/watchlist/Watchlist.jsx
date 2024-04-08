@@ -13,14 +13,13 @@ import "./style.scss";
 
 const Watchlist = () => {
     const navigate = useNavigate();
-    const details = useState("");
     const {watchlist} = useContext(GlobalContext);
     const { data } = useFetch("");
 
     const { url } = useSelector((state) => state.home);
 
    const  handleClick = () => {
-            console.log(data.id)
+            console.log(data)
             details(
                 navigate(`/movie/${data.id}`)
             )};
@@ -44,8 +43,7 @@ const Watchlist = () => {
                                 <>
                             <Img className="posterImg" key={data.id}  src={url.backdrop + data.poster_path }/>
                             
-                            <button>enlever de la watchlist</button>
-                            <button onClick={handleClick}>Details</button>
+                            <MovieControls  movie={data}/>
                             </>
                         ) : (
                             <>
