@@ -47,12 +47,12 @@
                 .triangle {
                     stroke-dasharray: 240;
                     stroke-dashoffset: 480;
-                    stroke: white;
+                    stroke: rgba(32, 201, 41, 0.601);
                     transform: translateY(0);
                     transition: all 0.7s ease-in-out;
                 }
                 .circle {
-                    stroke: white;
+                    stroke: rgb(23, 146, 52);
                     stroke-dasharray: 650;
                     stroke-dashoffset: 1300;
                     transition: all 0.5s ease-in-out;
@@ -64,12 +64,12 @@
                     .triangle {
                         stroke-dashoffset: 0;
                         opacity: 1;
-                        stroke: var(--pink);
+                        stroke: var(--black-lighter);                        ;
                         animation: trailorPlay 0.7s ease-in-out;
                     }
                     .circle {
                         stroke-dashoffset: 0;
-                        stroke: var(--pink);
+                        stroke: var(--black-lighter); 
                     }
                 }
             }

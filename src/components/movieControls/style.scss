@@ -1,0 +1,93 @@
+.removeBtn {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+   }
+   
+   .removeBtn, .removeBtn span {
+    transition: 200ms;
+   }
+   
+   .removeBtn .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+   }
+   
+   .removeBtn .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   .removeBtn svg {
+    width: 15px;
+    fill: #eee;
+   }
+   
+   .removeBtn:hover {
+    background: #ff3636;
+   }
+   
+   .removeBtn:hover .text {
+    color: transparent;
+   }
+   
+   .removeBtn:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   
+   .removeBtn:focus {
+    outline: none;
+   }
+   
+   .removeBtn:active .icon svg {
+    transform: scale(0.8);
+   }
+
+   .detailBtn {
+    /* Variables */
+    --button_radius: 0.75em;
+    margin-top: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--black-lighter);
+  }
+  
+  .button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--black);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--black-lighter);
+    color: var(--black);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+  }
+  
+  .detailBtn:hover .button_top {
+    /* Pull the button upwards when hovered */
+    transform: translateY(-0.33em);
+  }
+  
+  .detailBtn:active .button_top {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+  }

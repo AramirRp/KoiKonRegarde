@@ -61,16 +61,8 @@ const HeroBanner = () => {
                     <span className="subTitle">
                         Tout plein de films partout, maintenant
                     </span>
-                    <div className="searchInput">
-                        <input
-                            type="text"
-                            placeholder="Recherchez votre prochain film"
-                            onChange={(e) => setQuery(e.target.value)}
-                            onKeyUp={searchQueryHandler}
-                        />
-                        <button onClick={searchQueryHandler}>Recherche</button>
-                    </div>
-                    <button onClick={RandomQueryHandler} >KoiKonRegarde?</button>
+                    
+                    <button className="KoiKonBtn" onClick={RandomQueryHandler} >KoiKonRegarde?</button>
                 </div>
             </ContentWrapper>
         </div>
