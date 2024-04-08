@@ -50,7 +50,6 @@ a{
     .content {
         display: flex;
         position: relative;
-        flex-direction: column;
         gap: 25px;
         @include md {
             gap: 50px;
@@ -59,13 +58,58 @@ a{
         .left {
             flex-shrink: 0;
             .posterImg {
+                border-radius: 2em;
                 width: 100%;
-                display: block;
-                border-radius: 12px;
+                height: 100%;
+                top:0;
+                left:0;
+                position: relative;
+                padding: 0rem;
+                background: rgb(0 0 0 / 60%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                opacity: 0.8;
+                transition: 0.5s;
+                box-shadow:  7px 0.1em .1em .1px rgb(6 6 6);
                 @include md {
                     max-width: 350px;
                 }
+                
             }
+            .posterImg:hover {
+                border: 3px solid var(--black-lighter);
+                border-radius: 10px;
+                opacity: 1;
+            }
+            .btn1{
+                margin-top: -1em;
+                display: flex;
+                justify-content:center;
+
+            }
+            .kkrbtn {
+                align-items: center;
+                font-size: 11px;
+                letter-spacing: 1px;
+                text-decoration: none;
+                position: relative;
+                text-transform: uppercase;
+                text-align: center;
+                color: #000000;
+                background-color: #ffffff;
+                cursor: pointer;
+                border: 3px solid;
+                box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+              }
+              .kkrbtn:active {
+                box-shadow: 0px 0px 0px 0px;
+               
+              }
+              
+              
         }
         .right {
             color: rgb(255, 255, 255);

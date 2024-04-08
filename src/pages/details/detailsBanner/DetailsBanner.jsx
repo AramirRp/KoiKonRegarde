@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import dayjs from "dayjs";
@@ -14,13 +15,15 @@ import PosterFallback from "../../../assets/no-poster.png";
 import { PlayIcon } from "../PlayBtn.jsx";
 import {StreamIcon} from "../StreamBtn.jsx"
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
+import {fetchRandomMovieGenre} from '../../../utils/apiRandomGenre.js';
 
 import { GlobalContext } from "../../../context/GlobalState";
 
 const DetailsBanner = ({ video, crew }) => {
     const [show, setShow] = useState(false);
     const [videoId, setVideoId] = useState(null);
-
+    const navigate = useNavigate();
+    const RandomMovieId = useState("");
     const { mediaType, id } = useParams();
     const { data, loading } = useFetch(`/${mediaType}/${id}`);
 
@@ -45,6 +48,17 @@ const DetailsBanner = ({ video, crew }) => {
     let StoredMovie = watchlist.find(o => o.id == id);
 
     const watchlistDisabled = StoredMovie ? true : false;
+
+    const RandomQueryHandler = () => {
+
+        RandomMovieId(
+            fetchRandomMovieGenre(_genres[0]).then((result) => {
+                navigate(`/movie/${result}`);
+            }));            
+    };
+
+
+
 
     return (
         <div className="detailsBanner">
@@ -73,6 +87,19 @@ const DetailsBanner = ({ video, crew }) => {
                                                 src={PosterFallback}
                                             />
                                         )}
+
+                                        
+
+                                        <div className="btn1" >
+                                            <div>
+                                                
+                                                <button className="kkrbtn" onClick={RandomQueryHandler} >
+                                                    <span>
+                                                        Un autre KoiKonRegarde du genre !
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="right">
                                         <div className="title">
