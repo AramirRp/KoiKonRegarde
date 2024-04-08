@@ -6,8 +6,6 @@ The idea was to take the previous project KoiKonRegarde made as a collective pro
 
 WIP updates : 
 - searching and adding JustWatch API and french theaters API to show where to see the movies
-- adding randomizer with genre filter after a first choice
-- rework of the SCSS and the global flow of the website
 - creating a KoiKonRegarde logo
   ...and lot of other stuff ! 
 
