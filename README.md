@@ -30,6 +30,7 @@ rework of the SCSS to be translate to Tailwind
 correction of mobile views issues
 adding a dark mode
 ...maybe working on a electron desktop app ? a React Native app ? sky is the limit
+will remove the possiblity to watch the movie like a pirate, but might keep it with a easter egg maybe
 ```
 
 <p align="center">
